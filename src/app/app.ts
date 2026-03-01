@@ -18,24 +18,24 @@ export class App implements AfterViewInit {
   games: Game[] = [
     {
       id: 1,
-      name: 'FIFA 2024',
+      name: 'GTA 5',
       price: 69.99,
-      image: 'https://picsum.photos/seed/fifa2024/300/200',
-      description: 'Le meilleur jeu de football avec des graphiques ultra-réalistes'
+      image: 'https://picsum.photos/seed/gta5/300/200',
+      description: 'Le retour de la franchise la plus attendue avec un monde ouvert immense et des graphiques ultra-réalistes.'
     },
     {
       id: 2,
-      name: 'Call of Duty Modern Warfare III',
-      price: 79.99,
-      image: 'https://picsum.photos/seed/codmw3/300/200',
-      description: 'Action intense et multijoueur compétitif'
+      name: 'FIFA 24',
+      price: 59.99,
+      image: 'https://picsum.photos/seed/fifa24/300/200',
+      description: 'Le meilleur jeu de football avec des graphiques photoréalistes et une IA de jeu révolutionnaire.'
     },
     {
       id: 3,
-      name: 'Grand Theft Auto VI',
-      price: 89.99,
-      image: 'https://picsum.photos/seed/gta6/300/200',
-      description: 'Monde ouvert ultime avec une liberté totale'
+      name: 'Call of Duty Modern Warfare III',
+      price: 79.99,
+      image: 'https://picsum.photos/seed/callduty/300/200',
+      description: 'Action intense et multijoueur compétitif avec des graphiques de nouvelle génération et des modes de jeu innovants.'
     }
   ];
 
