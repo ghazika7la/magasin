@@ -11,6 +11,8 @@ import { ShoppingCart } from './components/shopping-cart/shopping-cart';
 import { CartService } from './services/cart';
 import { Auth } from './components/auth/auth';
 import { AuthService } from './services/auth.service';
+import { Jeux } from './jeux/jeux';
+import { Accueil } from './accueil/accueil';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AuthService } from './services/auth.service';
     Header,
     GameCard,
     ShoppingCart,
-    Auth
+    Auth,
+    Jeux,
+    Accueil
   ],
   imports: [
     BrowserModule,

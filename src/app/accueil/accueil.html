@@ -1,0 +1,87 @@
+<!-- Section Authentification -->
+<section class="auth-section">
+  <div class="container">
+    <div class="auth-container">
+      <div class="auth-form">
+        <h2>🔐 Connexion</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Entrez votre email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" placeholder="Entrez votre mot de passe" required>
+          </div>
+          <button type="submit" class="btn-primary">Se connecter</button>
+        </form>
+        <p class="auth-switch">
+          Pas encore de compte ? 
+          <button class="btn-link" onclick="showInscription()">S'inscrire</button>
+        </p>
+      </div>
+      <div class="auth-form" id="inscriptionForm" style="display: none;">
+        <h2>📝 Inscription</h2>
+        <form>
+          <div class="form-group">
+            <label for="inscr-email">Email</label>
+            <input type="email" id="inscr-email" placeholder="Entrez votre email" required>
+          </div>
+          <div class="form-group">
+            <label for="inscr-password">Mot de passe</label>
+            <input type="password" id="inscr-password" placeholder="Créez votre mot de passe" required>
+          </div>
+          <button type="submit" class="btn-primary">S'inscrire</button>
+        </form>
+        <p class="auth-switch">
+          Déjà un compte ? 
+          <button class="btn-link" onclick="showConnexion()">Se connecter</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Titre Principal -->
+<section class="hero-section">
+  <div class="container">
+    <h1 class="main-title">🎮 Magasin de jeux</h1>
+    <p class="main-subtitle">Découvrez les meilleurs jeux vidéo au meilleur prix</p>
+  </div>
+</section>
+
+<!-- Section Contact -->
+<section class="contact-section">
+  <div class="container">
+    <h2>📞 Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>📧 Email</h3>
+        <p>contact@magasin-jeux.fr</p>
+      </div>
+      <div class="contact-card">
+        <h3>📱 Téléphone</h3>
+        <p>01 23 45 67 89</p>
+      </div>
+      <div class="contact-card">
+        <h3>📍 Adresse</h3>
+        <p>123 Rue des Jeux, 75000 Paris</p>
+      </div>
+    </div>
+    
+    <div class="contact-form">
+      <h3>💬 Envoyez-nous un message</h3>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" placeholder="Votre nom" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Votre message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</section>
