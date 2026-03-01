@@ -12,5 +12,16 @@
       "src": "/(.*)",
       "dest": "/docs/$1"
     }
+  ],
+  "functions": {},
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/docs/index.html"
+    },
+    {
+      "source": "/jeux.html",
+      "destination": "/docs/jeux.html"
+    }
   ]
 }
