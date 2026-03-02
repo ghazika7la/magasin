@@ -1,64 +1,19 @@
 {
   "version": 2,
   "name": "magasin-jeux",
+  "buildCommand": "echo 'No build needed'",
+  "outputDirectory": "./",
+  "installCommand": "echo 'No install needed'",
   "builds": [
     {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "styles-5INURTSO.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "script.js",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "favicon.ico",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "logo-icon.svg",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "public/googlea6617c895422e02d.html",
+      "src": "**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/index.html",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/styles-5INURTSO.css",
-      "dest": "/styles-5INURTSO.css"
-    },
-    {
-      "src": "/script.js",
-      "dest": "/script.js"
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "/favicon.ico"
-    },
-    {
-      "src": "/logo-icon.svg",
-      "dest": "/logo-icon.svg"
-    },
-    {
-      "src": "/googlea6617c895422e02d.html",
-      "dest": "/public/googlea6617c895422e02d.html"
-    },
-    {
-      "src": "/public/(.*)",
-      "dest": "/public/$1"
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 }
