@@ -3,25 +3,62 @@
   "name": "magasin-jeux",
   "builds": [
     {
-      "src": "docs/index.html",
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "jeux.html", 
+      "use": "@vercel/static"
+    },
+    {
+      "src": "styles.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "main-DZRALYVG.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "favicon.ico",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "logo-icon.svg",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/docs/$1"
-    }
-  ],
-  "functions": {},
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/docs/index.html"
+      "src": "/",
+      "dest": "/index.html"
     },
     {
-      "source": "/jeux.html",
-      "destination": "/docs/jeux.html"
+      "src": "/jeux",
+      "dest": "/jeux.html"
+    },
+    {
+      "src": "/jeux.html",
+      "dest": "/jeux.html"
+    },
+    {
+      "src": "/styles.css",
+      "dest": "/styles.css"
+    },
+    {
+      "src": "/main-DZRALYVG.js",
+      "dest": "/main-DZRALYVG.js"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/logo-icon.svg",
+      "dest": "/logo-icon.svg"
+    },
+    {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
     }
   ]
 }

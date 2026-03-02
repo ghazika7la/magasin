@@ -3,6 +3,11 @@ from flask_cors import CORS
 import os
 import logging
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
+
+# Charger les variables d'environnement depuis .env
+load_dotenv()
+
 from utils.ga4_client import GA4Client
 from utils.gsc_client import GSCClient
 from utils.recommendations import RecommendationsEngine
