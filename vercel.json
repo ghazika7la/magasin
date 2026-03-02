@@ -3,58 +3,58 @@
   "name": "magasin-jeux",
   "builds": [
     {
-      "src": "docs/browser/index.html",
+      "src": "index.html",
       "use": "@vercel/static"
     },
     {
-      "src": "docs/browser/main-R2B7NSCW.js",
+      "src": "styles-5INURTSO.css",
       "use": "@vercel/static"
     },
     {
-      "src": "docs/browser/styles-5INURTSO.css",
+      "src": "script.js",
       "use": "@vercel/static"
     },
     {
-      "src": "docs/browser/favicon.ico",
+      "src": "favicon.ico",
       "use": "@vercel/static"
     },
     {
-      "src": "docs/browser/logo-icon.svg",
+      "src": "logo-icon.svg",
       "use": "@vercel/static"
     },
     {
-      "src": "docs/browser/googlea6617c895422e02d.html",
+      "src": "public/googlea6617c895422e02d.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/",
-      "dest": "/docs/browser/index.html"
+      "dest": "/index.html"
     },
     {
       "src": "/index.html",
-      "dest": "/docs/browser/index.html"
-    },
-    {
-      "src": "/main-R2B7NSCW.js",
-      "dest": "/docs/browser/main-R2B7NSCW.js"
+      "dest": "/index.html"
     },
     {
       "src": "/styles-5INURTSO.css",
-      "dest": "/docs/browser/styles-5INURTSO.css"
+      "dest": "/styles-5INURTSO.css"
+    },
+    {
+      "src": "/script.js",
+      "dest": "/script.js"
     },
     {
       "src": "/favicon.ico",
-      "dest": "/docs/browser/favicon.ico"
+      "dest": "/favicon.ico"
     },
     {
       "src": "/logo-icon.svg",
-      "dest": "/docs/browser/logo-icon.svg"
+      "dest": "/logo-icon.svg"
     },
     {
       "src": "/googlea6617c895422e02d.html",
-      "dest": "/docs/browser/googlea6617c895422e02d.html"
+      "dest": "/public/googlea6617c895422e02d.html"
     },
     {
       "src": "/public/(.*)",
