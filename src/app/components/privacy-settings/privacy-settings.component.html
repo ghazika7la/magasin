@@ -1,0 +1,85 @@
+<div class="privacy-settings">
+  <div class="settings-header">
+    <h2>Privacy Settings</h2>
+    <p>Manage your privacy preferences and cookie consent</p>
+  </div>
+
+  <div class="settings-content">
+    <div class="consent-status">
+      <h3>Current Consent Status</h3>
+      <div class="status-indicator" [ngClass]="currentConsent">
+        <span *ngIf="currentConsent === 'accepted'" class="status-accepted">
+          ✓ Analytics Accepted
+        </span>
+        <span *ngIf="currentConsent === 'rejected'" class="status-rejected">
+          ✗ Analytics Rejected
+        </span>
+        <span *ngIf="currentConsent === null" class="status-pending">
+          ? No Decision Made
+        </span>
+      </div>
+    </div>
+
+    <div class="dnt-status" *ngIf="dntEnabled">
+      <div class="alert alert-info">
+        <strong>Do Not Track Enabled:</strong> Your browser has requested not to be tracked. 
+        Analytics will not be loaded regardless of your consent choice.
+      </div>
+    </div>
+
+    <div class="consent-actions">
+      <h3>Update Your Preferences</h3>
+      <div class="action-buttons">
+        <button class="btn btn-accept" (click)="acceptAll()">
+          Accept Analytics
+        </button>
+        <button class="btn btn-reject" (click)="rejectAll()">
+          Reject Analytics
+        </button>
+        <button class="btn btn-reset" (click)="resetConsent()">
+          Reset Consent
+        </button>
+      </div>
+    </div>
+
+    <div class="privacy-info">
+      <h3>About Our Analytics</h3>
+      <div class="info-card">
+        <h4>What we collect</h4>
+        <ul>
+          <li>Pages you visit on our site</li>
+          <li>Time spent on each page</li>
+          <li>General geographic location (country/region)</li>
+          <li>Browser and device type</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h4>How we use it</h4>
+        <ul>
+          <li>Improve website performance</li>
+          <li>Understand user behavior</li>
+          <li>Fix bugs and issues</li>
+          <li>Optimize user experience</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h4>Your rights</h4>
+        <ul>
+          <li>Opt out at any time</li>
+          <li>Clear stored data</li>
+          <li>Change preferences anytime</li>
+          <li>Request data deletion</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="advanced-actions">
+      <h3>Advanced Options</h3>
+      <button class="btn btn-danger" (click)="clearCookies()">
+        Clear All Analytics Cookies
+      </button>
+    </div>
+  </div>
+</div>

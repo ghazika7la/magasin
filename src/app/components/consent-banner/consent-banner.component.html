@@ -1,0 +1,13 @@
+<div *ngIf="showBanner" class="consent-banner">
+  <div class="consent-content">
+    <div class="consent-text">
+      <h4>Privacy Notice</h4>
+      <p>We use Google Analytics to understand how you use our website and improve your experience. Your privacy is important to us.</p>
+    </div>
+    <div class="consent-actions">
+      <button class="btn btn-accept" (click)="acceptConsent()">Accept All</button>
+      <button class="btn btn-reject" (click)="rejectConsent()">Reject</button>
+      <a routerLink="/privacy" class="btn btn-settings">Privacy Settings</a>
+    </div>
+  </div>
+</div>
