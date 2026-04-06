@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ConsentService {
   private readonly CONSENT_KEY = 'ga_consent';
-  private readonly GA_ID = 'G-SHPTV9R0MK';
+  private readonly GA_ID = 'G-NLCP329DKB';
   private readonly GA_SCRIPT_URL = `https://www.googletagmanager.com/gtag/js?id=${this.GA_ID}`;
 
   constructor() {
