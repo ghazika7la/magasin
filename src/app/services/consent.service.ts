@@ -21,10 +21,13 @@ export class ConsentService {
   }
 
   private isDntEnabled(): boolean {
+    const windowWithDnt = window as Window & { doNotTrack?: string | null };
+    const navigatorWithLegacyDnt = navigator as Navigator & { msDoNotTrack?: string | null };
+
     return navigator.doNotTrack === '1' || 
            navigator.doNotTrack === 'yes' || 
-           window.doNotTrack === '1' ||
-           navigator.msDoNotTrack === '1';
+           windowWithDnt.doNotTrack === '1' ||
+           navigatorWithLegacyDnt.msDoNotTrack === '1';
   }
 
   getConsent(): 'accepted' | 'rejected' | null {

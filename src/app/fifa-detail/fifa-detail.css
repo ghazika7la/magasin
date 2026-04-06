@@ -1,0 +1,125 @@
+:host {
+  display: block;
+}
+
+.fifa-page {
+  min-height: 100vh;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at top right, rgba(180, 255, 89, 0.26), transparent 26%),
+    linear-gradient(135deg, #071a30 0%, #0e4d7d 52%, #0d785b 100%);
+  color: #effff4;
+}
+
+.back-link {
+  display: inline-flex;
+  margin-bottom: 1.75rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  color: #effff4;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 700;
+}
+
+.fifa-layout {
+  width: min(1040px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.score-panel {
+  border-radius: 34px;
+  background: linear-gradient(180deg, #eaffef 0%, #b6ffd8 100%);
+  color: #082132;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+}
+
+.number {
+  font-size: 7rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.label {
+  margin-top: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18rem;
+  font-weight: 800;
+}
+
+.content-panel {
+  padding: 3rem;
+  border-radius: 34px;
+  background: rgba(247, 255, 250, 0.96);
+  color: #102338;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+}
+
+.tag {
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22rem;
+  font-weight: 800;
+  color: #128454;
+}
+
+.content-panel h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+}
+
+.main-text {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.48rem);
+  line-height: 1.9;
+}
+
+.note-box {
+  margin-top: 1.7rem;
+  padding: 1.4rem 1.5rem;
+  border-radius: 24px;
+  background: rgba(16, 35, 56, 0.07);
+}
+
+.note-box h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.75rem;
+}
+
+.note-box p {
+  margin: 0;
+  line-height: 1.8;
+  font-size: 1.06rem;
+}
+
+@media (max-width: 900px) {
+  .fifa-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .score-panel {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fifa-page {
+    padding: 1rem;
+  }
+
+  .content-panel {
+    padding: 1.7rem;
+  }
+
+  .number {
+    font-size: 5rem;
+  }
+}

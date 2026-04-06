@@ -1,0 +1,83 @@
+:host {
+  display: block;
+}
+
+.gta-page {
+  min-height: 100vh;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at top left, rgba(255, 128, 88, 0.28), transparent 28%),
+    linear-gradient(135deg, #1b1220 0%, #3f2334 48%, #111827 100%);
+  color: #fff7ef;
+}
+
+.back-link {
+  display: inline-flex;
+  margin-bottom: 1.75rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  color: #fff7ef;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 700;
+}
+
+.gta-hero {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 34px;
+  background: rgba(255, 245, 236, 0.95);
+  color: #1a1c26;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.26);
+}
+
+.tag {
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22rem;
+  font-weight: 800;
+  color: #d76b33;
+}
+
+.gta-hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+}
+
+.main-text {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.9;
+}
+
+.gta-note {
+  width: min(680px, 100%);
+  margin: 1.5rem auto 0;
+  padding: 2rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gta-note h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.8rem;
+}
+
+.gta-note p {
+  margin: 0;
+  line-height: 1.8;
+  font-size: 1.06rem;
+}
+
+@media (max-width: 640px) {
+  .gta-page {
+    padding: 1rem;
+  }
+
+  .gta-hero,
+  .gta-note {
+    padding: 1.6rem;
+  }
+}

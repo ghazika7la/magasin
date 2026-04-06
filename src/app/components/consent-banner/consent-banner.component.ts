@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ConsentService } from '../../services/consent.service';
 
 @Component({
   selector: 'app-consent-banner',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
   templateUrl: './consent-banner.component.html',
   styleUrls: ['./consent-banner.component.scss']
 })

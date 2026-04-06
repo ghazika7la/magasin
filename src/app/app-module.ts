@@ -14,6 +14,8 @@ import { Auth } from './components/auth/auth';
 import { AuthService } from './services/auth.service';
 import { JeuxComponent } from './jeux/jeux';
 import { Accueil } from './accueil/accueil';
+import { GtaDetailComponent } from './gta-detail/gta-detail';
+import { FifaDetailComponent } from './fifa-detail/fifa-detail';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { Accueil } from './accueil/accueil';
     ShoppingCart,
     Auth,
     JeuxComponent,
-    Accueil
+    Accueil,
+    GtaDetailComponent,
+    FifaDetailComponent
   ],
   imports: [
     BrowserModule,

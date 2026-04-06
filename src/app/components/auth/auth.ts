@@ -31,12 +31,13 @@ export class Auth implements OnInit {
     this.errorMessage = '';
 
     setTimeout(() => {
-      if (this.authService.login(this.username, this.password)) {
+      const result = this.authService.login(this.username, this.password);
+      if (result.ok) {
         this.isAuthenticated = true;
         this.currentUser = this.authService.getCurrentUser();
         this.errorMessage = '';
       } else {
-        this.errorMessage = 'Nom d\'utilisateur ou mot de passe incorrect';
+        this.errorMessage = result.error || 'Nom d\'utilisateur ou mot de passe incorrect';
       }
       this.isLoading = false;
     }, 1000);

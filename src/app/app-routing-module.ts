@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Accueil } from './accueil/accueil';
-import { JeuxComponent } from './jeux/jeux';
+import { GtaDetailComponent } from './gta-detail/gta-detail';
+import { FifaDetailComponent } from './fifa-detail/fifa-detail';
 
 const routes: Routes = [
   { path: '', component: Accueil },
-  { path: 'jeux', component: JeuxComponent },
+  { path: 'gta-detaail', component: GtaDetailComponent },
+  { path: 'fifa', component: FifaDetailComponent },
   { path: '**', redirectTo: '' }
 ];
 
