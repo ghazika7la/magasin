@@ -27,14 +27,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Configure Angular for GitHub Pages
+        run: |
+          node -e "const fs=require('fs'); const p='angular.json'; const j=JSON.parse(fs.readFileSync(p,'utf8')); const o=j.projects['magasin-jeux'].architect.build.options; o.baseHref='/seo-ia123/'; o.deployUrl='/seo-ia123/'; fs.writeFileSync(p, JSON.stringify(j, null, 2));"
+
       - name: Build Angular app
         run: npm run build
 
       - name: Prepare GitHub Pages files
         run: |
-          sed -i 's#<base href="/">#<base href="/seo-ia123/">#' docs/browser/index.html
-          sed -i 's#<link rel="stylesheet" href="/#<link rel="stylesheet" href="/seo-ia123/#' docs/browser/index.html
-          sed -i 's#<script src="/#<script src="/seo-ia123/#' docs/browser/index.html
           cp docs/browser/index.html docs/browser/404.html
 
       - name: Deploy to GitHub Pages
