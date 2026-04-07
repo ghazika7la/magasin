@@ -12,6 +12,28 @@ Un magnifique magasin de jeux vidéo en ligne avec panier d'achat et authentific
 
 **Site en ligne** : https://hassen100.github.io/magasin-jeux/
 
+### GitHub Pages (Angular SPA)
+
+Pour publier correctement l'application Angular sur GitHub Pages :
+
+```bash
+npm run deploy:github
+```
+
+Ensuite :
+
+1. Push les changements sur GitHub.
+2. Ouvre Settings > Pages dans le repository.
+3. Choisis Deploy from a branch.
+4. Sélectionne `main` et le dossier `/docs`.
+
+Le script `deploy:github` :
+
+- génère le build Angular avec `base-href` et `deploy-url` sur `/magasin-jeux/`
+- copie la sortie de `docs/browser` vers `docs/`
+- crée `docs/404.html` (fallback des routes SPA)
+- crée `docs/.nojekyll`
+
 
 
 ## 🎮 Fonctionnalités
