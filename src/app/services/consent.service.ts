@@ -1,15 +1,20 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConsentService {
+  private readonly platformId = inject(PLATFORM_ID);
+  private readonly isBrowser = isPlatformBrowser(this.platformId);
   private readonly CONSENT_KEY = 'ga_consent';
   private readonly GA_ID = 'G-NLCP329DKB';
   private readonly GA_SCRIPT_URL = `https://www.googletagmanager.com/gtag/js?id=${this.GA_ID}`;
 
   constructor() {
-    this.checkConsentOnLoad();
+    if (this.isBrowser) {
+      this.checkConsentOnLoad();
+    }
   }
 
   private checkConsentOnLoad(): void {
@@ -21,6 +26,10 @@ export class ConsentService {
   }
 
   private isDntEnabled(): boolean {
+    if (!this.isBrowser) {
+      return false;
+    }
+
     const windowWithDnt = window as Window & { doNotTrack?: string | null };
     const navigatorWithLegacyDnt = navigator as Navigator & { msDoNotTrack?: string | null };
 
@@ -31,11 +40,19 @@ export class ConsentService {
   }
 
   getConsent(): 'accepted' | 'rejected' | null {
+    if (!this.isBrowser || typeof localStorage === 'undefined') {
+      return null;
+    }
+
     const stored = localStorage.getItem(this.CONSENT_KEY);
     return stored as 'accepted' | 'rejected' | null;
   }
 
   setConsent(consent: 'accepted' | 'rejected'): void {
+    if (!this.isBrowser || typeof localStorage === 'undefined') {
+      return;
+    }
+
     localStorage.setItem(this.CONSENT_KEY, consent);
     
     if (consent === 'accepted' && !this.isDntEnabled()) {
@@ -46,6 +63,10 @@ export class ConsentService {
   }
 
   loadGoogleAnalytics(): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     if (this.isGAScriptLoaded()) {
       return;
     }
@@ -59,8 +80,8 @@ export class ConsentService {
     // Initialize dataLayer and gtag
     script.onload = () => {
       window.dataLayer = window.dataLayer || [];
-      function gtag(...args: any[]) {
-        window.dataLayer.push(arguments);
+      function gtag(...args: unknown[]) {
+        window.dataLayer.push(args);
       }
       window.gtag = gtag;
       
@@ -70,6 +91,10 @@ export class ConsentService {
   }
 
   unloadGoogleAnalytics(): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     // Remove gtag.js script
     const scripts = document.querySelectorAll('script[src*="googletagmanager.com/gtag"]');
     scripts.forEach(script => script.remove());
@@ -85,6 +110,10 @@ export class ConsentService {
   }
 
   private clearGACookies(): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     const cookies = document.cookie.split(';');
     cookies.forEach(cookie => {
       const [name] = cookie.trim().split('=');
@@ -96,6 +125,10 @@ export class ConsentService {
   }
 
   private isGAScriptLoaded(): boolean {
+    if (!this.isBrowser) {
+      return false;
+    }
+
     return !!document.querySelector('script[src*="googletagmanager.com/gtag"]');
   }
 
@@ -105,6 +138,10 @@ export class ConsentService {
   }
 
   resetConsent(): void {
+    if (!this.isBrowser || typeof localStorage === 'undefined') {
+      return;
+    }
+
     localStorage.removeItem(this.CONSENT_KEY);
     this.unloadGoogleAnalytics();
   }
@@ -113,7 +150,7 @@ export class ConsentService {
 // Extend Window interface for gtag
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
-    dataLayer: any[];
+    gtag?: (...args: unknown[]) => void;
+    dataLayer: unknown[][];
   }
 }

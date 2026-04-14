@@ -5,11 +5,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ssr": "ng build --configuration production,ssr",
     "build:github": "ng build --configuration production --base-href /magasin-jeux/ --deploy-url /magasin-jeux/ && node scripts/prepare-github-pages.cjs",
     "deploy:github": "npm run build:github",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:magasin-jeux": "node dist/magasin-jeux/server/server.mjs"
+    "serve:ssr": "ng serve --configuration ssr --port 4000",
+    "serve:ssr:magasin-jeux": "npm run serve:ssr"
   },
   "prettier": {
     "printWidth": 100,
@@ -35,6 +37,7 @@
     "@angular/router": "^21.1.0",
     "@angular/ssr": "^21.1.4",
     "express": "^5.1.0",
+    "puppeteer": "^24.40.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

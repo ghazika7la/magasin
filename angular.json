@@ -28,6 +28,7 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+            "server": "src/server.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -44,7 +45,6 @@
               "src/styles.css"
             ],
             "outputPath": "docs",
-            "outputMode": "static",
             "ssr": false,
             "baseHref": "/",
             "deployUrl": "/",
@@ -66,6 +66,13 @@
               ],
               "outputHashing": "all"
             },
+            "ssr": {
+              "outputPath": "dist/magasin-jeux",
+              "ssr": {
+                "entry": "src/server.ts"
+              },
+              "prerender": false
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
@@ -79,6 +86,9 @@
           "configurations": {
             "production": {
               "buildTarget": "magasin-jeux:build:production"
+            },
+            "ssr": {
+              "buildTarget": "magasin-jeux:build:ssr"
             },
             "development": {
               "buildTarget": "magasin-jeux:build:development"

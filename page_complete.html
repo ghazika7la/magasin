@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en"><head>
+            <meta charset="UTF-8">
+            <title>Error</title>
+            <script type="module">
+              const error = {"message":"Angular app engine manifest is not set. Please ensure you are using the '@angular/build:application' builder to build your server application.","stack":"    at tL (C:/Users/ghazi/magasin/.angular/vite-root/magasin-jeux/chunk-QOK2GYZT.mjs:87:2261)\n    at \u003cinstance_members_initializer> (C:/Users/ghazi/magasin/.angular/vite-root/magasin-jeux/chunk-QOK2GYZT.mjs:115:954)\n    at new e (C:/Users/ghazi/magasin/.angular/vite-root/magasin-jeux/chunk-QOK2GYZT.mjs:115:1069)\n    at eval (C:/Users/ghazi/magasin/.angular/vite-root/magasin-jeux/chunk-QOK2GYZT.mjs:119:347)\n    at async ESModulesEvaluator.runInlinedModule (file:///C:/Users/ghazi/magasin/node_modules/vite/dist/node/module-runner.js:913:3)\n    at async SSRCompatModuleRunner.directRequest (file:///C:/Users/ghazi/magasin/node_modules/vite/dist/node/module-runner.js:1146:59)\n    at async SSRCompatModuleRunner.directRequest (file:///C:/Users/ghazi/magasin/node_modules/vite/dist/node/chunks/config.js:15111:22)\n    at async SSRCompatModuleRunner.cachedRequest (file:///C:/Users/ghazi/magasin/node_modules/vite/dist/node/module-runner.js:1053:73)\n    at async eval (C:/Users/ghazi/magasin/.angular/vite-root/magasin-jeux/main.server.mjs:10:31)\n    at async ESModulesEvaluator.runInlinedModule (file:///C:/Users/ghazi/magasin/node_modules/vite/dist/node/module-runner.js:913:3)","frame":""}
+              try {
+                const { ErrorOverlay } = await import("/@vite/client")
+                document.body.appendChild(new ErrorOverlay(error))
+              } catch {
+                const h = (tag, text) => {
+                  const el = document.createElement(tag)
+                  el.textContent = text
+                  return el
+                }
+                document.body.appendChild(h('h1', 'Internal Server Error'))
+                document.body.appendChild(h('h2', error.message))
+                document.body.appendChild(h('pre', error.stack))
+                document.body.appendChild(h('p', '(Error overlay failed to load)'))
+              }
+            </script>
+          </head>
+          <body>
+          
+        
+      <vite-error-overlay></vite-error-overlay></body></html>
