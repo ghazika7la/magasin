@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 interface StoreGame {
   route: string;
@@ -13,11 +13,12 @@ interface StoreGame {
   standalone: false,
   templateUrl: './accueil.html',
   styleUrl: './accueil.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Accueil {
-  games: StoreGame[] = [
+  readonly games: StoreGame[] = [
     {
-      route: '/gta-detaail',
+      route: '/gta-detail',
       name: 'GTA V',
       price: '39,99 EUR',
       image:

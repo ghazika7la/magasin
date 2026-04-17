@@ -47,7 +47,7 @@ pip install -r requirements.txt
 cp .env.example .env
 # Éditez .env avec vos identifiants :
 # GA4_PROPERTY_ID=properties/35RSYRP4HD
-# GSC_SITE_URL=https://seo-ia123.vercel.app
+# GSC_SITE_URL=https://magasin-amber.vercel.app
 # GOOGLE_APPLICATION_CREDENTIALS=./service-account.json
 
 # Lancement du serveur
@@ -107,7 +107,7 @@ GOOGLE_APPLICATION_CREDENTIALS=./service-account.json
 GA4_PROPERTY_ID=properties/35RSYRP4HD
 
 # URL du site dans Search Console
-GSC_SITE_URL=https://seo-ia123.vercel.app
+GSC_SITE_URL=https://magasin-amber.vercel.app
 
 # Configuration Flask
 FLASK_ENV=production

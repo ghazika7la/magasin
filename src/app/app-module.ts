@@ -1,44 +1,20 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing-module';
-import { App } from './app';
-import { Header } from './components/header/header';
-import { GameCard } from './components/game-card/game-card';
-import { ShoppingCart } from './components/shopping-cart/shopping-cart';
-import { CartService } from './services/cart';
-import { Auth } from './components/auth/auth';
-import { AuthService } from './services/auth.service';
-import { JeuxComponent } from './jeux/jeux';
+import { AppComponent } from './app.component';
 import { Accueil } from './accueil/accueil';
 import { GtaDetailComponent } from './gta-detail/gta-detail';
 import { FifaDetailComponent } from './fifa-detail/fifa-detail';
 
 @NgModule({
   declarations: [
-    App,
-    Header,
-    GameCard,
-    ShoppingCart,
-    Auth,
-    JeuxComponent,
+    AppComponent,
     Accueil,
     GtaDetailComponent,
     FifaDetailComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CommonModule,
-    FormsModule
-  ],
-  providers: [
-    CartService,
-    AuthService,
-    provideBrowserGlobalErrorListeners(),
-    provideClientHydration(withEventReplay()),
-  ],
-  bootstrap: [App]
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [provideBrowserGlobalErrorListeners(), provideClientHydration(withEventReplay())],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

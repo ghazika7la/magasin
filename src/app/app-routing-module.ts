@@ -6,7 +6,7 @@ import { FifaDetailComponent } from './fifa-detail/fifa-detail';
 
 const routes: Routes = [
   { path: '', component: Accueil },
-  { path: 'gta-detaail', component: GtaDetailComponent },
+  { path: 'gta-detail', component: GtaDetailComponent },
   { path: 'fifa', component: FifaDetailComponent },
   { path: '**', redirectTo: '' }
 ];
