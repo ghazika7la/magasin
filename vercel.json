@@ -1,4 +1,10 @@
 {
   "buildCommand": "npm run build:vercel",
-  "outputDirectory": "docs/browser"
+  "outputDirectory": "docs/browser",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

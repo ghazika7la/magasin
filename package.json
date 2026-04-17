@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build:vercel && node scripts/serve-static.mjs",
+    "start": "npm run build:static && node scripts/serve-static.mjs",
     "build": "ng build",
-    "build:vercel": "ng build --configuration production && node scripts/prerender-static.mjs",
+    "build:vercel": "ng build --configuration production",
+    "build:static": "ng build --configuration production && node scripts/prerender-static.mjs",
     "build:github": "ng build --configuration production --base-href /magasin-jeux/ --deploy-url /magasin-jeux/ && node scripts/prepare-github-pages.cjs",
     "deploy:github": "npm run build:github",
     "watch": "ng build --watch --configuration development",
