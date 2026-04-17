@@ -1,4 +1,6 @@
 {
+  "framework": null,
+  "installCommand": "echo \"Skip install for static deployment\"",
   "buildCommand": "npm run build:vercel",
   "outputDirectory": "docs/browser"
 }
