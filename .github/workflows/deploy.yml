@@ -18,22 +18,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Configure Angular for GitHub Pages
-        run: |
-          node -e "const fs=require('fs'); const p='angular.json'; const j=JSON.parse(fs.readFileSync(p,'utf8')); const o=j.projects['magasin-jeux'].architect.build.options; o.baseHref='/magasin-jeux/'; o.deployUrl='/magasin-jeux/'; fs.writeFileSync(p, JSON.stringify(j, null, 2));"
-
-      - name: Build prerendered site
-        run: npm run build:static
-
       - name: Prepare GitHub Pages files
         run: |
           cp docs/browser/index.html docs/browser/404.html
